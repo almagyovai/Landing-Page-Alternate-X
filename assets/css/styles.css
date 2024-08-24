@@ -30,6 +30,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 0 0 -40px;
+    padding: 0 20px 0 0;
     border-right: 1.5px solid #cdcad4;
 }
 
@@ -156,9 +158,9 @@ b{
     }
 
     .sidemenu{
-        max-width: max-content;
-        padding: 0 10px;
-        margin-left: -35px;
+        width: 100%;
+        padding: 0 0;
+        margin: 0 auto;
     }
 
     .btn-primary{
@@ -189,7 +191,7 @@ b{
     position: fixed;
     top: 0px;
     margin: 0;
-    width: 682px;
+    width: 675px;
     height: 85px;
     background-color: #F8F8FF;
     border-bottom: 1.5px solid #cdcad4;
@@ -233,7 +235,6 @@ input[type=text] {
     flex-direction: column;
     gap: 10px;
     padding: 100px 0 0 0;
-    border-right: 1.5px solid #cdcad4;
 }
 
 .feed::-webkit-scrollbar{
@@ -309,9 +310,10 @@ input[type=text] {
 
 .topics{
     flex: 1;
-    padding: 80px 0 40px 30px;
+    padding: 80px 30px 40px 30px;
     display: flex;
     flex-direction: column;
+    border-left: 1px solid #cdcad4;
 }
 
 .description{
@@ -347,4 +349,124 @@ input[type=text] {
     .topics{
          display: none;
      }
+
+     .sidemenu{
+        flex: 0.25;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 0 0 -40px;
+        padding: 0 0 0 0;
+        border-right: 1.5px solid #cdcad4;
+    }
+    
+    .sidemenu ul li{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        padding: 0;
+    }
+    
  }
+
+ @media only screen and (max-width: 600px) {
+    .display-none{
+        display: none;
+    }
+    
+    .sidemenu {
+        position: fixed;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        justify-content: center;
+        border-right: none;
+        background-color: #F8F8FF;
+        margin: 0 auto;
+        padding: 10px 0 0 0;
+        z-index: 100000 !important; /* Ensures it's above other content */
+    }
+
+    .sidemenu ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidemenu ul li {
+        margin: 0;
+    }
+
+    .sidemenu ul li p {
+        line-height: 50px; /* Adjust line height for better vertical alignment */
+    }
+
+    .btn-primary {
+        display: none; /* Hide buttons if needed */
+    }
+
+    .username {
+        display: none; /* Hide username if needed */
+    }
+
+    .img_inline {
+        position: relative;
+        top: 0; /* Reset top position */
+        width: 40px; /* Adjust size if needed */
+        margin: 0; /* Reset margin */
+    }
+
+    .feed{
+        flex: 2;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 80px 0 40px 0;
+    }    
+
+    .navbar {
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        top: 0px;
+        margin: 0;
+        width: 100%;
+        height: 65px;
+        background-color: #F8F8FF;
+        border-bottom: 1.5px solid #cdcad4;
+    }
+        
+    .navbar ul {
+        list-style-type: none;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .navbar ul li{
+        text-align: center;
+        display: flex;
+    }
+
+    .nav-item{
+        text-decoration: none;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        margin: 0 50px;
+        padding: 20px 0;
+    }    
+    
+    .sidemenu ul li p a:hover{
+        background-color: #cdcad4;
+        padding: 32px 10px 10px 10px;
+        border-radius: 0 !important;
+        color: #393053;
+     }     
+}
